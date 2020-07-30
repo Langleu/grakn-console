@@ -11,4 +11,6 @@ RUN apk update && \
     rm -rf grakn-core-all-linux-${GRAKN_VER}.tar.gz README.md LICENSE server && \
     ln -s /grakn/grakn /usr/local/bin/grakn
 
-ENTRYPOINT [ "grakn" , "console" ]
+COPY run_grakn.sh .
+
+ENTRYPOINT [ "./run_grakn.sh"]
