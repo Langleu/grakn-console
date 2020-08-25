@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-ENV GRAKN_VER=1.8.0
+ENV GRAKN_VER=1.8.1
 
 WORKDIR /grakn
 
