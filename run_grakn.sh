@@ -4,6 +4,8 @@ ADDRESS=${ADDRESS:-'127.0.0.1:48555'}
 KEYSPACE=${KEYSPACE:-'grakn'}
 TIMEOUT=${TIMEOUT:-60}
 
+trap 'echo grakn-console stopping.' TERM INT
+
 while [ -z "$ESCAPE" ]
 do
 RESPONSE=$(grakn console --address $ADDRESS --file . 2> /dev/null)
@@ -30,4 +32,5 @@ else
   echo "no schema or keyspace was supplied"
 fi
 
-grakn console --keyspace $KEYSPACE --address $ADDRESS
+sleep 365d &
+wait
